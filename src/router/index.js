@@ -1,23 +1,72 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import PagesdacceuilPr from '../views/PagesAcceuilPr.vue'
+import PageMiseAJourMDP from '../views/PagesMiseAjourMDP.vue'
+import PageRenitialisationMDP from '../views/PageRenitialisationMDP.vue'
+import PageVerificationdumail from'../views/PageVerificationDuMail.vue'
+import PagedacceuilaPropos from'../views/PagesAcceuiAPropos.vue'
+import PageAccederauxFormulaire from'../views/PageAccedezAuxFormulaire.vue'
+import PageLogin from'../views/PageLogin.vue'
+import PagesPrHommes from'../views/PageProduitHomme.vue'
+import PagesPrFemme from'../views/PageProduitFemme.vue'
+import PagesPrEnfant from'../views/PageProduitEnfant.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path:'/Enfant',
+    name:'PagesPrEnfant',
+    component:PagesPrEnfant
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path:'/Femme',
+    name:'PagesPrFemme',
+    component:PagesPrFemme
+  },
+  {
+    path:'/Homme',
+    name:'PagesPrHommes',
+    component:PagesPrHommes
+  },
+ {
+   path:'/',
+   name:'PagesdacceuilPr',
+   component:PagesdacceuilPr
+ },
+ {
+  path:'/MiseAjourMDP',
+  name:'PagesMiseAjourMDP',
+  component:PageMiseAJourMDP
+},
+{
+  path:'/ReinitMDP',
+  name:'PageRenitialisationMDP',
+  component:PageRenitialisationMDP,
+},
+{
+  path:'/VerifEmail',
+  name:'PageVerificationdumail',
+  component:PageVerificationdumail,
+},
+{
+  path:'/APropos',
+  name:'PagedacceuilaPropos',
+  component:PagedacceuilaPropos,
+},
+{
+  path:'/AccesFormulaire',
+  name:'PageAccedezAuxFormulaire',
+  component:PageAccederauxFormulaire,
+},
+{
+  path:'/Login',
+  name:'PageLogin',
+  component:PageLogin,
+},
+
+ 
+
 ]
 
 const router = new VueRouter({
