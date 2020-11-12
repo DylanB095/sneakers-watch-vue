@@ -41,7 +41,7 @@ export default {
   created() {
     /* AXIOS est un module qui servira a appeler/relier le back avec le front */
     this.axios
-      .get("http://localhost:3000/produit/all/4/32")
+      .get(this.$apiurl + "/produit/all/4/32")
       .then((res) => {
         this.produits = res.data.produit;
       })

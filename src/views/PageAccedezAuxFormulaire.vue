@@ -8,7 +8,6 @@ import AccederAuxFormulaire from '../components/PageAccederauxFormulaire/Acceder
 export default {
     components:{
         AccederAuxFormulaire,
-        
     }
 }
 </script>

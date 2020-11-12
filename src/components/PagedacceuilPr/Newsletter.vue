@@ -40,7 +40,7 @@ export default {
     /* @submit.prevent="newsletter" */
     newsletter() {
       axios
-        .post("http://localhost:3000/newsletter/Abonner", this.Send)
+        .post(this.$apiurl + "/newsletter/Abonner", this.Send)
         .then(() => {
           window.location.reload();
         })

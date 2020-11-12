@@ -103,7 +103,7 @@
       /* ROUTE ASSISTANCE D'ACHATS (recupere la data saisie sur mon front et est generé dans mon back ) */
       /* @submit.prevent="supportA" */
       supportA() {
-        axios.post("http://localhost:3000/supportaide/ContacterSppAide", this.supportAide)
+        axios.post(this.$apiurl + "/supportaide/ContacterSppAide", this.supportAide)
           .then(() => {
             window.location.reload();
           })
@@ -125,7 +125,7 @@
       /* ROUTE SUPPORT D'AIDE (recupere la data saisie sur mon front et est generé dans mon back ) */
       /* @submit.prevent="assistanceA" */
       assistanceA() {
-        axios.post("http://localhost:3000/supportachat/ContacterSppAchat", this.assistanceAchat)
+        axios.post(this.$apiurl + "/supportachat/ContacterSppAchat", this.assistanceAchat)
           .then(() => {
             window.location.reload();
           })
