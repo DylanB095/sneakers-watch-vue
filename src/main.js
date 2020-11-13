@@ -5,7 +5,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-Vue.prototype.$apiurl = "https://sneakers-watch.fr:3000/";
+Vue.prototype.$apiurl = "https://sneakers-watch.fr:3000";
 Vue.use(VueAxios, axios);
 Vue.config.productionTip = false
 
