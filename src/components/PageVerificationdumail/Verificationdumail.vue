@@ -59,7 +59,10 @@
     border: solid 2.5px #ff4949;
     background-color: white;
     outline:none;
-    
+    opacity: 0.9;
+}
+.BtnVerif:hover {
+    opacity: 1;
 }
 .LinkVerif {
     text-decoration: none;

@@ -1,5 +1,7 @@
 <template>
   <div class="Borderau2">
+
+    <!-- ICONE HOMME -->
     <div class="IconeHomme">
       <img class="AssistanceHomme" src="../../assets/SupAideHOMME.png" alt="Assistance d'achats" />
       <p class="TexteAssistanceHomme">ASSISTANCE D'ACHATS</p>
@@ -36,6 +38,7 @@
       </form>
     </div>
 
+<!-- ICONE FEMME -->
     <div class="IconeFemme">
       <img class="SupportAideFemme" src="../../assets/SupAideFEMME.png" alt="Support D'aide" />
       <p class="TexteSupportAideFemme">SUPPORT D'AIDE</p>
@@ -104,10 +107,13 @@
       /* @submit.prevent="supportA" */
       supportA() {
         axios.post(this.$apiurl + "/supportaide/ContacterSppAide", this.supportAide)
-          .then(() => {
+          .then((res) => {
+            console.log(res)
             window.location.reload();
           })
-          .catch();
+          .catch(err => {
+            console.log(err)
+          });
       },
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
@@ -126,10 +132,13 @@
       /* @submit.prevent="assistanceA" */
       assistanceA() {
         axios.post(this.$apiurl + "/supportachat/ContacterSppAchat", this.assistanceAchat)
-          .then(() => {
+          .then((res) => {
+            console.log(res)
             window.location.reload();
           })
-          .catch();
+          .catch(err =>{
+            console.log(err)
+          });
       },
     },
   };

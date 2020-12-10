@@ -41,10 +41,13 @@ export default {
     newsletter() {
       axios
         .post(this.$apiurl + "/newsletter/Abonner", this.Send)
-        .then(() => {
+        .then((res) => {
+          console.log(res)
           window.location.reload();
         })
-        .catch();
+        .catch(err => {
+          console.log(err)
+        });
     },
   },
 };

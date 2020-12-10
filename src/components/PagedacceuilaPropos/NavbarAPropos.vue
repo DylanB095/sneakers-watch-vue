@@ -1,7 +1,7 @@
 <template>
 <nav id="NavAPropos">
     <div class="LogoAPropos">
-        <img src="../../assets/logo sneakers watch.png" width="98" alt="LogoSneakersW">
+        <a href="/#"><img src="../../assets/logo sneakers watch.png" width="98" alt="LogoSneakersW"></a>
     </div>
     <div id="btnEnchere">
         <button class="btnEnchere">Acceder aux Encheres </button>

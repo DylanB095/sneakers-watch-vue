@@ -15,7 +15,7 @@
         <p>SERVICE CLIENTS</p>
         <br>
         <ul>
-          <li><a href="">À propos de nous</a></li>
+          <li><a href="/APropos">À propos de nous</a></li>
           <li><a href="">F.A.Q</a></li>
           <li><a href="">Mon Compte</a></li>
           <li><a href="">Nous Contacter</a></li>

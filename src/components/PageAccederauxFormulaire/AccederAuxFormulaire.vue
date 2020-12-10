@@ -59,8 +59,12 @@
     border: solid 2.5px #dcdcdc;
     background-color: #25272e;
     outline:none;
-    
+    opacity: 0.9;
 }
+.BtnAccesForm:hover{
+  opacity: 1;
+}
+
 .LinkAccesForm {
     text-decoration: none;
     color: #ff4949; 

@@ -4,8 +4,8 @@
     <Navbar2 />
     <Header />
     <Filtre />
-    <SectionSneakers />
-    <SectionMontres />
+    <SectionSneakers @recherchedata="recherchedata($event)" />
+    <SectionMontres @recherchedata="recherchedata($event)" />
     <Pagination />
     <Newsletter />
     <Footer />

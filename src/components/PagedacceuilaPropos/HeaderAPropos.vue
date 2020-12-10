@@ -3,7 +3,7 @@
         <div class="ContenuTextAPropos">
             <div class="HeaderAProposTitre"><h1> L'ART DE LA MODE</h1></div>
             <div class="HeaderAProposPara"><p>VENEZ DÉCOUVRIRE LES DERNIERES <br> TENDANCES EN VOGUE</p> </div>
-            <div id="HeaderAProposBtn"> <button class="HeaderAProposBtn">Nos Tendances</button></div>
+            <div id="HeaderAProposBtn"> <a href="/#"><button class="HeaderAProposBtn">Nos Tendances</button></a></div>
 
         </div>
     </header>

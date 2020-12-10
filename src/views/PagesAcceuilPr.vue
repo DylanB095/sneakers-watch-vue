@@ -1,11 +1,11 @@
 <template>
     <div>
        <Navbar1/>
-       <Navbar2/> 
+       <Navbar2 @recherchedata="recherchedata($event)"/> 
        <Header/>   
-       <Section/> 
+       <Section @recherchedata="recherchedata($event)" /> 
        <Borderaux1/>
-       <Section2/>
+       <Section2 @recherchedata="recherchedata($event)"/>
        <Borderaux2/>
        <Section3/>
        <Newsletter/>

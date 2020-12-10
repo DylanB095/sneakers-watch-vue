@@ -6,7 +6,7 @@
         <!-- comment on importe une image -->
         <img
           class="ImgProd"
-          :src="require(`@/assets/montres/Montre-Enfant/${produit.image}`)"
+          :src="require(`@/assets/montres/${produit.image}`)"
           width="270"
         />
 
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-
+import { bus } from "../../main";
 export default {
   data() {
     return {
@@ -39,6 +39,10 @@ export default {
     };
   },
   created() {
+      bus.$on('recherchedata',(data)=>{
+      this.produits = data.produit
+    });
+    if (this.produit == null){
     /* AXIOS est un module qui servira a appeler/relier le back avec le front */
     this.axios
       .get(this.$apiurl + "/produit/all/4/32")
@@ -48,7 +52,13 @@ export default {
       .catch((err) => {
         alert(err);
       });
-  },
+  }
+},
+methods: {
+    recherchedata(produit){
+      this.produits = produit
+    } 
+  }
 };
 </script>
 

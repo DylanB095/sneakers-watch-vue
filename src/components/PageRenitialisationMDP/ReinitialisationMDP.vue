@@ -1,4 +1,5 @@
 <template>
+<form @submit.prevent="reinit">
   <body id="ImgReinit">
       <div id="CroixFermetureReinit">
           <i class="fas fa-times" style="padding: 10px 0px 0px 10px;
@@ -14,17 +15,47 @@
           <br>
           <br>
       <div id="InputEmailIcone">
-    <input type="Email" class="InputEmail" placeholder="Email" />
+    <input type="Email" class="InputEmail" placeholder="Email" name="email" v-model="reinitialiser.email" required  />
       <i class="fas fa-user" id="IconeInpute"></i>   
       </div>
       <br>
       <div id="InputEmailIcone">
-          <button class="BtnReinit"><router-link class="LinkReinit" to="`//`">Envoyer</router-link></button>
+          <button class="BtnReinit" type="submit">Envoyer</button>
       </div>
       </div>
       </div>
   </body>
+</form>
 </template>
+
+
+<script>
+/* AXIOS est un module qui servira a appeler/relier le back avec le front */
+import axios from "axios";
+export default {
+  data() {
+    return {
+        /* v-model */
+      reinitialiser: {},
+    };
+  },
+  methods: {
+    /* ROUTE reinit (envoiedemailChangement)(recupere la data saisie sur mon front et est generé dans mon back ) */
+    /* @submit.prevent="reinit" */
+    reinit() {
+      axios
+        .post(this.$apiurl + "/client/EnvoieDeMailChangement", this.reinitialiser)
+        .then((res) => {
+          console.log(res)
+          window.location.reload(); 
+        })
+        .catch(err => {
+          console.log(err)
+        });
+    },
+  },
+};
+</script>
 
 <style scoped>
 
@@ -34,7 +65,7 @@
   box-sizing: border-box;
 }
  #ImgReinit {
-    background-image: url("/assets/RéinitialisationMotDePasse.jpg");
+    background-image: url("../../assets/RéinitialisationMotDePasse.jpg");
     width: 100%;
     height: 110vh;
     background-size:cover;
@@ -89,13 +120,15 @@
     border: solid 2.5px #ff4949;
     background-color: white;
     outline:none;
-    
-}
-.LinkReinit {
+    opacity: 0.9;
     text-decoration: none;
     color: #25272e; 
     font-family: "Noteworthy";
     font-size:inherit;
+    cursor: pointer;
+}
+.BtnReinit:hover {
+    opacity: 1;
 }
 
 </style>

@@ -1,4 +1,5 @@
 <template>
+<form @submit.prevent="login">
   <body id="Img_fond_login">
       <div class="overlay">
           <div class="inner">
@@ -19,11 +20,11 @@
           </div>
           <br>
       <div id="AvatarLogin">
-    <input type="text" class="AvatarLogin" placeholder="NOM D'UTILISATEUR" />
+    <input type="text" class="AvatarLogin" placeholder="NOM D'UTILISATEUR" name="email" v-model="connecter.email" required />
       </div>
       <br>
       <div id="AvatarLogin">
-    <input type="text" class="AvatarLogin" placeholder="MOT DE PASSE" />
+    <input type="password" class="AvatarLogin" placeholder="MOT DE PASSE" name="password" v-model="connecter.password" required/>
       </div>
       <br>
       <div>
@@ -34,7 +35,7 @@
 
       <div id="AvatarLogin">
           <br>
-          <button class="BtnLogin"><router-link class="LinkLogin" to="`//`">Envoyer</router-link></button>
+          <button class="BtnLogin" type="submit">Envoyer</button>
       </div>
       <br>
       <div id="AvatarLogin">
@@ -43,7 +44,36 @@
       </div>
       </div>
   </body>
+</form>
 </template>
+
+<script>
+/* AXIOS est un module qui servira a appeler/relier le back avec le front */
+import axios from "axios";
+export default {
+  data() {
+    return {
+        /* v-model */
+      connecter: {},
+    };
+  },
+  methods: {
+    /* ROUTE login (recupere la data saisie sur mon front et est generé dans mon back ) */
+    /* @submit.prevent="login" */
+    login() {
+      axios
+        .post(this.$apiurl + "/client/login", this.connecter)
+        .then((res) => {
+          console.log(res)
+          window.location.reload();  
+        })
+        .catch(err => {
+          console.log(err)
+        });
+    },
+  },
+};
+</script>
 
 <style scoped>
 * {
@@ -115,13 +145,15 @@
     border: solid 2.5px #ff4949;
     background-color: transparent;
     outline:none;
-    
-}
-.LinkLogin{
     text-decoration: none;
     color: white; 
     font-family: 'Times New Roman';
     font-size:inherit;
+}
+.BtnLogin:hover{
+   transition: 0.1s;
+  /*  changer la perspective de l'image*/
+  transform: scale(1.15);
 }
 .CréeUnCmpte {
     text-decoration: none;
